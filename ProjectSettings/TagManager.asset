@@ -6,6 +6,7 @@ TagManager:
   tags:
   - HealingStrawberry
   - NPC
+  - AAA
   layers:
   - Default
   - TransparentFX
