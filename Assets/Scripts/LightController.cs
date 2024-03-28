@@ -6,8 +6,6 @@ using UnityEngine.Timeline;
 
 public class LightController : MonoBehaviour
 {
-    Quaternion temp;
-    public Rigidbody2D rb;
     Vector2 origin;
     Vector2 direction;
     public LayerMask a;
@@ -15,13 +13,12 @@ public class LightController : MonoBehaviour
     {
         var dir = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
         var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        temp = Quaternion.AngleAxis(angle, Vector3.forward);
-        transform.rotation = temp;
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 
     private void Update()
     {
-        origin = rb.position + Vector2.up * 0.2f;
+        /*origin = rb.position + Vector2.up * 0.2f;
         direction = temp * Vector2.up;
         if (Input.GetKeyDown(KeyCode.X))
         {
@@ -35,12 +32,12 @@ public class LightController : MonoBehaviour
                     character.DisplayDialog();
                 }
             }
-        }
+        }*/
     }
-    private void OnDrawGizmos()
+    /*private void OnDrawGizmos()
     {
 
         Gizmos.DrawLine(origin, origin + direction * 1.5f);
-    }
+    }*/
 
 }
